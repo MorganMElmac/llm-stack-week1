@@ -16,6 +16,8 @@ services:
   postgres:
     image: postgres:15
     container_name: postgres
+    env_file:
+      - .env.example
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
@@ -35,3 +37,4 @@ services:
 
 volumes:
   postgres_data:
+
