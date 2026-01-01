@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - .env.example
+      - .env
     depends_on:
       - postgres
 
@@ -17,13 +17,7 @@ services:
     image: postgres:15
     container_name: postgres
     env_file:
-      - .env.example
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    ports:
-      - "5432:5432"
+      - .env
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
